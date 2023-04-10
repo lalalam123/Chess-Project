@@ -11,7 +11,7 @@
 - Learn open source project practics
 
 # Highlights of my project
-https://github.com/lalalam123/Chess-Project/blob/main/main.ipynb
+* [How to use Python-Chess](main.ipynb)
 
 # Installed packages
 ```
