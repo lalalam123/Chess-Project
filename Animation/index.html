@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Image</title>
+    <style>
+        #image {
+            max-width: 100%;
+            height: auto;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="image" src="./result.png" />
+    <script>
+        // Get the image element
+        const image = document.getElementById('image');
+
+        // Set a timer to update the image every 5 seconds
+        setInterval(() => {
+            // Generate a new timestamp to bypass browser caching
+            const timestamp = new Date().getTime();
+            // Update the image src with the new timestamp
+
+            if (image.src.endsWith('./result.png'))
+                image.src = './result2.png';
+            else
+                image.src = './result.png';
+
+            // Add the fade-out class to the image to animate it
+            image.classList.add('fade-out');
+
+            // Set a timer to remove the fade-out class after the animation is complete
+            setTimeout(() => {
+                image.classList.remove('fade-out');
+            }, 500);
+        }, 500);
+    </script>
+</body>
+
+</html>
